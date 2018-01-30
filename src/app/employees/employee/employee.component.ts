@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { EmployeeService } from '../../shared/employee.service';
+import { NgForm } from '@angular/forms';
 
 
 @Component({
@@ -12,6 +13,17 @@ export class EmployeeComponent implements OnInit {
   constructor(private employeeService: EmployeeService) { }
 
   ngOnInit() {
+  }
+
+  resetForm(form: NgForm) {
+    form.reset(); // for  form reset
+    this.employeeService.selectedEmployee = { // for employee model reset
+      CustomerId: null,
+      CustomerName: '',
+      CustomerAddress: '',
+      CustomerContact: ''
+    };
+
   }
 
 }
