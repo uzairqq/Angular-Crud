@@ -3,9 +3,9 @@ form.cust-form{
     border-radius: 4px;
     padding: 10px;
 }
-div-validation-error{
+div.validation-error{
     color: red;
-    text-align: center
+    text-align: center;
 }
 
 button:hover,a.btn:hover{
