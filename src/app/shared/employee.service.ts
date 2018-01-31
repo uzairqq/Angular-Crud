@@ -10,6 +10,13 @@ import 'rxjs/add/operator/toPromise';
 export class EmployeeService {
 
   selectedEmployee: Employee;
-  constructor() { }
+  constructor(private http: Http) { }
+
+  postCustomer(cust: Employee) {
+    const body = JSON.stringify(cust);
+    const headerOptions = new Headers({'ContentType' : 'application/json'});
+    const requestOptions = new RequestOptions({method: RequestMethod.Post, headers: headerOptions});
+    this.http.post('url', body, requestOptions );
+  }
 
 }
