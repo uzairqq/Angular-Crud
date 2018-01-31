@@ -16,7 +16,7 @@ export class EmployeeService {
     const body = JSON.stringify(cust);
     const headerOptions = new Headers({'ContentType' : 'application/json'});
     const requestOptions = new RequestOptions({method: RequestMethod.Post, headers: headerOptions});
-    this.http.post('url', body, requestOptions );
+   return this.http.post('http://localhost:56996/api/Customer', body, requestOptions ).map(x => x.json());
   }
 
 }
