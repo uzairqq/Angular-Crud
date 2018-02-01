@@ -10,6 +10,7 @@ import 'rxjs/add/operator/toPromise';
 export class EmployeeService {
 
   selectedEmployee: Employee;
+  listEmployee: Employee[];
   constructor(private http: Http) { }
 
   postEmployee(emp: Employee) {
@@ -21,4 +22,7 @@ export class EmployeeService {
     return this.http.post('http://localhost:55538/api/Employees', body, requestOptions ).map(x => x.json());
   }
 
+  getEmployeeList() {
+    this.http.get('http://localhost:55538/api/Employees');
+  }
 }
