@@ -1,3 +1,6 @@
-<p>
-  employee-list works!
-</p>
+<table class="table table-sm table-hover">
+  <tr *ngFor="let employee of employeeService.employeeList">
+    <td>{{employee.FirstName}} - {{employee.LastName}}</td>
+    <td>{{employee.EmpCode}}</td>
+  </tr>
+</table>
