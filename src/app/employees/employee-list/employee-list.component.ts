@@ -15,4 +15,8 @@ export class EmployeeListComponent implements OnInit {
     this.employeeService.getEmployeeList();
   }
 
+  showForEdit(emp: Employee) {
+    this.employeeService.selectedEmployee =  emp;
+  }
+
 }
