@@ -12,11 +12,13 @@ export class EmployeeService {
   selectedEmployee: Employee;
   constructor(private http: Http) { }
 
-  postCustomer(cust: Employee) {
-    const body = JSON.stringify(cust);
-    const headerOptions = new Headers({'ContentType' : 'application/json'});
+  postEmployee(emp: Employee) {
+    console.log('PostCustomer Method Befor Json Stringify' , emp);
+    const body = JSON.stringify(emp);
+    console.log('PostCustomer Method After Json Stringify' , body);
+    const headerOptions = new Headers({'Content-Type' : 'application/json'});
     const requestOptions = new RequestOptions({method: RequestMethod.Post, headers: headerOptions});
-   return this.http.post('http://localhost:56996/api/Customer', body, requestOptions ).map(x => x.json());
+    return this.http.post('http://localhost:55538/api/Employees', body, requestOptions ).map(x => x.json());
   }
 
 }

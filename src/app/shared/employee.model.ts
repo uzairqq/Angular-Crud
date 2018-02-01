@@ -1,7 +1,9 @@
 export class Employee {
-CustomerId: number;
-CustomerName: string;
-CustomerAddress: string;
-CustomerContact: string;
+     EmoployeeID: number;
+     FirstName: string;
+     LastName: string;
+     EmpCode: string;
+     Position: string;
+     Office: string;
 
 }

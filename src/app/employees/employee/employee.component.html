@@ -1,27 +1,41 @@
-<form class="cust-form" #CustomerForm="ngForm">
+<form class="emp-form" #employeeForm="ngForm" (ngSubmit)="onSubmit(employeeForm)">
 <div class="form-row">
   <div class="form-group col-md-6">
-  <input class="form-control" placeholder="Customer Name" name="CustomerName" #CustomerName="ngModel" required  ngModel>
-  <div class="div.validation-error" *ngIf="CustomerName.invalid && CustomerName.touched ">This Feild is Required</div>
+    <input class="form-control" required name="firstName" #FirstName="ngModel"  placeholder="First Name" [(ngModel)]="employeeService.FirstName">
+    <div class="validation-error" *ngIf="FirstName.invalid && FirstName.touched ">This Feild is Required</div>
   </div>
   <div class="form-group col-md-6">
-    <input class="form-control" placeholder="Customer Address"  name="CustomerAddress" #CustomerAddress="ngModel" required  ngModel>
-    <div class="div.validation-error" *ngIf="CustomerAddress.invalid && CustomerAddress.touched ">This Feild is Required</div>
-  </div>
-  <div class="form-group col-md-12">
-    <input class="form-control" placeholder="Customer Contact"  name="CustomerContact" #CustomerContact="ngModel"  required ngModel>
-    <div class="div.validation-error" *ngIf="CustomerContact.invalid && CustomerContact.touched ">This Feild is Required</div>
+      <input class="form-control" required name="LastName" #LastName="ngModel" placeholder="Last Name" ngModel >
+      <div class="validation-error" *ngIf="LastName.invalid && LastName.touched ">This Feild is Required</div>
+    </div>
+</div>
 
-  </div>
+<div class="form-group">
+    <input class="form-control" name="Position" #Position="ngModel" placeholder="Position" [(ngModel)]="employeeService.Position">
 </div>
 
 <div class="form-row">
-    <div class="form-group col-md-8">
- <button [disabled]="!CustomerForm.valid" type="submit" class="btn btn-lg btn-block btn-info"><i class="fa fa-floppy-o"></i> Submit</button>
+    <div class="form-group col-md-6">
+      <input class="form-control" name="EmpCode" #EmpCode="ngModel" placeholder="Employee Code" [(ngModel)]="employeeService.EmpCode">
     </div>
-    <div class="form-group col-md-4">
-        <button type="button" (click)="resetForm(CustomerForm)" class="btn btn-lg btn-block btn-secondary"><i class="fa fa-repeat"></i> Reset</button>    
+    <div class="form-group col-md-6">
+        <input class="form-control" name="Office" #Office="ngModel" placeholder="Office" [(ngModel)]="employeeService.Office">
+    </div>
+  </div>
+
+  <div class="form-row">
+      <div class="form-group col-md-8">
+      <button [disabled]="!employeeForm.valid" type="submit" class="btn btn-lg btn-block btn-info"><i class="fa fa-floppy-o"></i> Submit</button>
+      </div>
+      <div class="form-group col-md-4">
+          <button type="button" (click)="resetForm(employeeForm)" class="btn btn-lg btn-block btn-secondary"><i class="fa fa-repeat"></i> Reset</button>    
       </div>
     </div>
-    <pre>{{CustomerForm.value | json}}</pre> 
+
 </form>
+
+<!-- [(ngModel)]="employeeService.selectedEmployee.FirstName" -->
+<!-- [(ngModel)]="employeeService.selectedEmployee.LastName" -->
+<!-- [(ngModel)]="employeeService.selectedEmployee.Position" -->
+<!-- [(ngModel)]="employeeService.selectedEmployee.EmpCode" -->
+<!-- [(ngModel)]="employeeService.selectedEmployee.Office" -->
