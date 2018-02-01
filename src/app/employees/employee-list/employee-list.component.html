@@ -2,5 +2,16 @@
   <tr *ngFor="let employee of employeeService.employeeList">
     <td>{{employee.FirstName}} - {{employee.LastName}}</td>
     <td>{{employee.EmpCode}}</td>
+    <td>
+        <a class="btn">
+          <i class="fa fa-pencil-square-o"></i>
+        </a>
+        <a class="btn text-danger">
+          <i class="fa fa-trash-o">
+    
+          </i>
+        </a>
+      </td>
   </tr>
+
 </table>
