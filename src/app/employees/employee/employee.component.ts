@@ -15,7 +15,6 @@ export class EmployeeComponent implements OnInit {
   ngOnInit() {
     this.resetForm();
   }
-
   resetForm(form?: NgForm) {
     if (form != null) {
     form.reset(); // for  form reset
@@ -25,6 +24,7 @@ export class EmployeeComponent implements OnInit {
       CustomerAddress: '',
       CustomerContact: ''
     };
+    console.log(form.value);
     }
 
   }

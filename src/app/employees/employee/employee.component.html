@@ -23,7 +23,5 @@
         <button type="button" (click)="resetForm(CustomerForm)" class="btn btn-lg btn-block btn-secondary"><i class="fa fa-repeat"></i> Reset</button>    
       </div>
     </div>
-    <h4>{{CustomerName.untouched}}</h4>
-    <h4>{{CustomerAddress.untouched}}</h4>
-    <h4>{{CustomerContact.untouched}}</h4>
+    <pre>{{CustomerForm.value | json}}</pre> 
 </form>
