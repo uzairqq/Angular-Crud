@@ -1,18 +1,19 @@
 import { Injectable } from '@angular/core';
-import { Employee } from './employee.model';
-
-import {Http, Response, Headers, RequestOptions, RequestMethod} from '@angular/http';
-import {Observable} from 'rxjs/Observable';
+import { Http, Response, Headers, RequestOptions, RequestMethod } from '@angular/http';
+import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/toPromise';
+import {Employee} from './employee.model';
 
 @Injectable()
 export class EmployeeService {
-
   selectedEmployee: Employee;
+
   employeeList: Employee[];
   constructor(private http: Http) { }
-
+  onSelect(hero: Employee): void {
+    this.selectedEmployee = hero;
+}
   postEmployee(emp: Employee) {
     console.log('PostCustomer Method Befor Json Stringify' , emp);
     const body = JSON.stringify(emp);

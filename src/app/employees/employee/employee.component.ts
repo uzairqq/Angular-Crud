@@ -17,7 +17,7 @@ export class EmployeeComponent implements OnInit {
     if (form != null) {
       form.reset(); // for  form reset
      this.employeeService.selectedEmployee = { // for employee model reset
-      EmoployeeID: null,
+      EmployeeID: null,
       FirstName: '',
       LastName: '',
       Position: '',
