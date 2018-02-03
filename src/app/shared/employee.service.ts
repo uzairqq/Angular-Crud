@@ -43,4 +43,9 @@ export class EmployeeService {
       this.employeeList = x;
     });
   }
+
+  deleteEmployee(id: number) {
+    return this.http.delete('http://localhost:64044/api/Employees/' + id)
+    .map(res =>  res.json());
+  }
 }
