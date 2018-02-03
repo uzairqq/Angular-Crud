@@ -1,6 +1,10 @@
 <form class="emp-form" #employeeForm="ngForm" (ngSubmit)="onSubmit(employeeForm)">
-<div class="form-row">
+
+    <div class="form-row">
+
   <div class="form-group col-md-6">
+        <input type="hidden" name="EmployeeID" #EmployeeID="ngModel" [ngModel]="employeeService.selectedEmployee?.EmployeeID" (ngModelChange) ="employeeService.selectedEmployee.EmployeeID = $event">  
+
     <input class="form-control"  name="FirstName" #FirstName="ngModel" [ngModel]="employeeService.selectedEmployee?.FirstName" (ngModel) ="employeeService.selectedEmployee.FirstName = $event"
     placeholder="First Name" required>
     <!-- <h2>{{employeeService?.selectedEmployee?.FirstName}} details!</h2> -->

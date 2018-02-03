@@ -12,20 +12,12 @@ export class EmployeeComponent implements OnInit {
   constructor(private employeeService: EmployeeService, private toastr: ToastrService ) {}
   ngOnInit() {
     this.resetForm();
-    // this.employeeService.selectedEmployee = {
-    //   EmployeeID: null,
-    //   FirstName: '',
-    //   LastName: '',
-    //   Position: '',
-    //   EmpCode: '',
-    //   Office: ''
-    // };
   }
   resetForm(form?: NgForm) {
     if (form != null) {
       form.reset(); // for  form reset
      this.employeeService.selectedEmployee = { // for employee model reset
-      EmployeeID: null,
+      EmoployeeID: null,
       FirstName: '',
       LastName: '',
       Position: '',
@@ -35,13 +27,23 @@ export class EmployeeComponent implements OnInit {
     }
   }
   onSubmit(form: NgForm) {
+    if (form.value.EmployeeID == null) {
     console.log('OnSubmit Method ' , form.value);
     this.employeeService.postEmployee(form.value)
     .subscribe(data => {
       this.resetForm(form);
+      this.employeeService.getEmployeeList();
       this.toastr.success('New Record Added Successfully', 'Employee Register');
     });
+  } else {
+    this.employeeService.putEmployee(form.value.EmployeeID, form.value)
+    .subscribe(data => {
+      this.resetForm(form);
+      this.employeeService.getEmployeeList();
+      this.toastr.info('New Updated Successfully', 'Employee Register');
+    });
   }
+}
 
 }
 console.log();
