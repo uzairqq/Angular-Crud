@@ -1,5 +1,5 @@
 export class Employee {
-    EmoployeeID: number;
+    EmployeeID: number;
     FirstName: string;
     LastName: string;
     EmpCode: string;
