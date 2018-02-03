@@ -4,7 +4,7 @@ import { AppComponent } from './app.component';
 import { EmployeesComponent } from './employees/employees.component';
 import { EmployeeComponent } from './employees/employee/employee.component';
 import { EmployeeListComponent } from './employees/employee-list/employee-list.component';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {FormsModule} from '@angular/forms';
 import {HttpModule} from '@angular/http';
 import {ToastrModule} from 'ngx-toastr';
@@ -20,7 +20,8 @@ import {ToastrModule} from 'ngx-toastr';
     BrowserModule,
     FormsModule,
     HttpModule,
-    ToastrModule.forRoot()
+    ToastrModule.forRoot(),
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
