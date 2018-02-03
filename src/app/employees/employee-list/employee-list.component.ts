@@ -9,10 +9,11 @@ import {Employee} from '../../shared/employee.model';
 })
 export class EmployeeListComponent implements OnInit {
 
-  constructor(private employeeService: EmployeeService) { }
+  constructor(private employeeService: EmployeeService) {
+   }
 
   ngOnInit() {
-    this.employeeService.getEmployeeList();
+     this.employeeService.getEmployeeList();
   }
 
   showForEdit(emp: Employee) {

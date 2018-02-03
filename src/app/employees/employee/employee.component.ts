@@ -12,6 +12,14 @@ export class EmployeeComponent implements OnInit {
   constructor(private employeeService: EmployeeService, private toastr: ToastrService ) {}
   ngOnInit() {
     this.resetForm();
+    // this.employeeService.selectedEmployee = {
+    //   EmployeeID: null,
+    //   FirstName: '',
+    //   LastName: '',
+    //   Position: '',
+    //   EmpCode: '',
+    //   Office: ''
+    // };
   }
   resetForm(form?: NgForm) {
     if (form != null) {

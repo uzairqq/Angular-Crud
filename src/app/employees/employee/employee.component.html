@@ -1,27 +1,27 @@
 <form class="emp-form" #employeeForm="ngForm" (ngSubmit)="onSubmit(employeeForm)">
 <div class="form-row">
   <div class="form-group col-md-6">
-    <input class="form-control"  name="FirstName" #FirstName="ngModel" [ngModel]="employeeService.selectedEmployee?.FirstName" (ngModelChange) ="employeeService.selectedEmployee.FirstName = $event"
+    <input class="form-control"  name="FirstName" #FirstName="ngModel" [ngModel]="employeeService.selectedEmployee?.FirstName" (ngModel) ="employeeService.selectedEmployee.FirstName = $event"
     placeholder="First Name" required>
     <!-- <h2>{{employeeService?.selectedEmployee?.FirstName}} details!</h2> -->
   <div class="validation-error" *ngIf="FirstName.invalid && FirstName.touched">This Field is Required.</div>
   </div>
   <div class="form-group col-md-6">
-      <input class="form-control" required name="LastName" #LastName="ngModel" placeholder="Last Name" [ngModel]="employeeService.selectedEmployee?.LastName" (ngModelChange) ="employeeService.selectedEmployee.LastName = $event" >
+      <input class="form-control" required name="LastName" #LastName="ngModel" placeholder="Last Name" [ngModel]="employeeService.selectedEmployee?.LastName" (ngModel) ="employeeService.selectedEmployee.LastName = $event" >
       <div class="validation-error" *ngIf="LastName.invalid && LastName.touched ">This Feild is Required</div>
     </div>
 </div>
 
 <div class="form-group">
-    <input class="form-control" name="Position" #Position="ngModel" placeholder="Position" [ngModel]="employeeService.selectedEmployee?.Position" (ngModelChange) ="employeeService.selectedEmployee.Position = $event">
+    <input class="form-control" name="Position" #Position="ngModel" placeholder="Position" [ngModel]="employeeService.selectedEmployee?.Position" (ngModel) ="employeeService.selectedEmployee.Position = $event">
 </div>
 
 <div class="form-row">
     <div class="form-group col-md-6">
-      <input class="form-control" name="EmpCode" #EmpCode="ngModel" placeholder="Employee Code" [ngModel]="employeeService.selectedEmployee?.EmpCode" (ngModelChange) ="employeeService.selectedEmployee.EmpCode = $event">
+      <input class="form-control" name="EmpCode" #EmpCode="ngModel" placeholder="Employee Code" [ngModel]="employeeService.selectedEmployee?.EmpCode" (ngModel) ="employeeService.selectedEmployee.EmpCode = $event">
     </div>
     <div class="form-group col-md-6">
-        <input class="form-control" name="Office" #Office="ngModel" placeholder="Office" [ngModel]="employeeService.selectedEmployee?.Office" (ngModelChange) ="employeeService.selectedEmployee.Office = $event">
+        <input class="form-control" name="Office" #Office="ngModel" placeholder="Office" [ngModel]="employeeService.selectedEmployee?.Office" (ngModel) ="employeeService.selectedEmployee.Office = $event">
     </div>
   </div>
 
